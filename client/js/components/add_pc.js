@@ -1,0 +1,31 @@
+function renderAddPc() {
+    document.querySelector('#page').innerHTML = `
+    <section class="create-pc">
+        <form onSubmit="createPc(event)">
+            <fieldset>
+                <label for="">PC Name:</label>
+                <input type="text" name="name">
+            </fieldset>
+        </form>
+    </section>      
+    `
+}
+
+function createPc(event) {
+    event.preventDefault()
+    const form = event.target
+
+    const data = Object.fromEntries(new FormData(form))
+
+    fetch('/api/pcs', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/JSON'},
+        body: JSON.stringify(data)
+    })
+
+    .then(res => res.json())
+    .then(pc => {
+        state.pcs.push(pc)
+        renderPcList()
+    })
+}
