@@ -3,7 +3,8 @@ CREATE DATABASE pc_db;
 
 CREATE TABLE users(
   id SERIAL PRIMARY KEY,
-  name TEXT,
+  first_name TEXT,
+  last_name TEXT,
   email TEXT,
   password_digest TEXT
 );
