@@ -30,5 +30,5 @@ function login(event) {
     })
     .then(res => res.json())
     .then(user => state.loggedInUser = user)
-    // .then(() => renderPcList()))
+    .then(() => renderPcList())
 }
