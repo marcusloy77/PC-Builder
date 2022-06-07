@@ -13,7 +13,7 @@ const sessionsController = require('./controllers/sessions_controller')
 
 // create app object
 const app = express()
-const port = 8080
+const port = process.env.PORT || 8080
 
 // start the web server
 app.listen(port, () => console.log(`listening on port ${port}`))
