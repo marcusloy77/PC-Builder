@@ -1,3 +1,5 @@
+const db = require('../db/db')
+
 const Pc = {
   findByUserId: (id) => {
     console.log(`user requesting pcs list for user: ${id}`)
