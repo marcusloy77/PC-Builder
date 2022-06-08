@@ -15,8 +15,8 @@ router.get('/', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-  const userId = req.params.id
-  const pcName = req.params.name
+  const userId = req.session.userId
+  const pcName = req.body.name
 
   Pc
     .create(userId, pcName)
