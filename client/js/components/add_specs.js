@@ -18,7 +18,7 @@ function renderAddSpecs() {
         <fieldset>
             <label for="">Graphics Cards</label>
             <select id="graphics_card_list">
-                <option> Choose a Graphic Card </option>
+                <option> Choose a Graphics Card </option>
             </select>
         </fieldset>
 
@@ -122,6 +122,33 @@ function renderCasesList() {
 function createSpecs(event) {
   event.preventDefault()
   const form = event.target
+  const cpu = document.getElementById('cpu_list').value
+  const gpu = document.getElementById('graphics_card_list').value
+  const ram = document.getElementById('ram_list').value
+  const motherboard = document.getElementById('motherboard_list').value
+  const ssd = document.getElementById('ssd_list').value
+  const psu = document.getElementById('psu_list').value
+  const pcCase = document.getElementById('case_list').value
+
+  if (cpu != 'Choose a CPU' && gpu != 'Choose a Graphic Card' && ram != 'Choose a Ram' && motherboard != 'Choose a Motherboard' && ssd != 'Choose a SSD' && psu != 'Choose a PSU' && pcCase != 'Choose a Case') {
+    state.pcs.push({})
+    let i = state.pcs.length-1
+    state.pcs[i]['cpu'] = cpu
+    state.pcs[i]['gpu'] = gpu
+    state.pcs[i]['ram'] = ram
+    state.pcs[i]['motherboard'] = motherboard
+    state.pcs[i]['ssd'] = ssd
+    state.pcs[i]['psu'] = psu
+    state.pcs[i]['case'] = pcCase
+  } else {
+    console.log('Please finish adding your specs')
+  }
+
   
+  // state.pcs[i]['ram'] = ram
+  // state.pcs[i]['motherboard'] = motherboard
+  // state.pcs[i]['ssd'] = ssd
+  // state.pcs[i]['psu'] = psu
+  // state.pcs[i]['case'] = pcCase
 }
 
