@@ -56,6 +56,8 @@ function renderAddSpecs() {
                 <option> Choose a Case </option>
             </select>
         </fieldset>
+
+        <button>Add Specs</button>
     </form>
   </section>
   `
@@ -118,6 +120,8 @@ function renderCasesList() {
 }
 
 function createSpecs(event) {
-
+  event.preventDefault()
+  const form = event.target
+  
 }
 

@@ -2,7 +2,7 @@ const db = require("../db/db")
 
 const Cases = {
   findAll: () => {
-    const sql = 'SELECT * FROM cases'
+    const sql = 'SELECT * FROM cases ORDER BY name'
 
     return db 
     .query(sql)
@@ -12,7 +12,7 @@ const Cases = {
 
 const CPUs = {
   findAll: () => {
-    const sql = 'SELECT * FROM cpus'
+    const sql = 'SELECT * FROM cpus ORDER BY name'
 
     return db 
     .query(sql)
@@ -22,7 +22,7 @@ const CPUs = {
 
 const Graphics_cards = {
   findAll: () => {
-    const sql = 'SELECT * FROM graphics_cards'
+    const sql = 'SELECT * FROM graphics_cards ORDER BY name'
 
     return db 
     .query(sql)
@@ -31,7 +31,7 @@ const Graphics_cards = {
 }
 const Motherboards = {
   findAll: () => {
-    const sql = 'SELECT * FROM cpus'
+    const sql = 'SELECT * FROM motherboards ORDER BY name'
 
     return db 
     .query(sql)
@@ -41,7 +41,7 @@ const Motherboards = {
 
 const PSUs = {
   findAll: () => {
-    const sql = 'SELECT * FROM psus'
+    const sql = 'SELECT * FROM psus ORDER BY name'
 
     return db 
     .query(sql)
@@ -51,7 +51,7 @@ const PSUs = {
 
 const Ram = {
   findAll: () => {
-    const sql = 'SELECT * FROM ram'
+    const sql = 'SELECT * FROM ram ORDER BY name'
 
     return db 
     .query(sql)
@@ -60,7 +60,7 @@ const Ram = {
 }
 const SSDs = {
   findAll: () => {
-    const sql = 'SELECT * FROM ssds'
+    const sql = 'SELECT * FROM ssds ORDER BY name'
 
     return db 
     .query(sql)

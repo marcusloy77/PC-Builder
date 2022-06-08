@@ -41,4 +41,34 @@ fetch('/api/gpus')
         })
     })
 
+fetch('/api/ram')
+    .then(res => res.json())
+    .then(ram => {
+        ram.forEach(ram => {
+            state.ram.push(ram.name)
+        })
+    })
 
+fetch('/api/motherboards')
+    .then(res => res.json())
+    .then(motherboards => {
+        motherboards.forEach(motherboard => {
+            state.motherboards.push(motherboard.name)
+        })
+    })
+
+fetch('/api/ssds')
+    .then(res => res.json())
+    .then(ssds => {
+        ssds.forEach(ssd => {
+            state.ssds.push(ssd.name)
+        })
+    })  
+
+fetch('/api/psus')
+    .then(res => res.json())
+    .then(psus => {
+        psus.forEach(psu => {
+            state.psus.push(psu.name)
+        })
+    }) 
