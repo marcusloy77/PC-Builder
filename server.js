@@ -9,6 +9,7 @@ const sessions = require('./middlewares/sessions')
 const pcController = require('./controllers/pc_controller')
 const usersController = require('./controllers/users_controller')
 const sessionsController = require('./controllers/sessions_controller')
+const specsController = require('./controllers/spec_controller')
 
 // create app object
 const app = express()
@@ -42,7 +43,9 @@ app.use(sessions)
 // middleware for controllers with routes
 app.use('/api/pcs', pcController) 
 app.use('/api/users', usersController) 
-app.use('/api/sessions', sessionsController) 
+app.use('/api/sessions', sessionsController)
+app.use('/api/specs', specsController)
+
 // this is saying when someone accesses the / route, run the relevant Controller
 //    |
 //    V

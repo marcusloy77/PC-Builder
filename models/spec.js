@@ -1,5 +1,15 @@
 const db = require("../db/db")
 
+const Cases = {
+  findAll: () => {
+    const sql = 'SELECT * FROM cases'
+
+    return db 
+    .query(sql)
+    .then(dbRes => dbRes.rows)
+  }
+}
+
 const CPUs = {
   findAll: () => {
     const sql = 'SELECT * FROM cpus'
@@ -10,42 +20,53 @@ const CPUs = {
   }
 }
 
-// const Spec = {
-//   findByPcId: (pc_id) => {
-//     const sql = 'SELECT * FROM specs WHERE pc_id = $1'
-//     return db
-//       .query(sql, [pc_id])
-//       .then(dbRes => dbRes.rows)
-//   },
+const Graphics_cards = {
+  findAll: () => {
+    const sql = 'SELECT * FROM graphics_cards'
 
-//   create: (pc_id, part_type, part_name, link) => {
-//     const sql = `
-//     INSERT INTO specs(pc_id, part_type, part_name, link)
-//     VALUES($1, $2, $3, $4)
-//     RETURNING *
-//     `
-//     return db
-//       .query(sql, [pc_id, part_type, part_name, link])
-//       .then(dbRes => dbRes.rows[0])
-//   },
+    return db 
+    .query(sql)
+    .then(dbRes => dbRes.rows)
+  }
+}
+const Motherboards = {
+  findAll: () => {
+    const sql = 'SELECT * FROM cpus'
 
-//   delete: (id) => {
-//     const sql = `
-//     DELETE FROM specs WHERE id = $1
-//     `
-//     return db.query(sql, [id])
-//   },
+    return db 
+    .query(sql)
+    .then(dbRes => dbRes.rows)
+  }
+}
 
-//   edit: (id, part_name, part_type, link) => {
-//     const sql = `
-//     UPDATE specs SET part_name = $2, part_type = $3, link = $4 WHERE id = $1
-//     `
-//     return db
-//       .query(sql, [id, part_name, part_type, link])
-//       .then(dbRes => dbRes.rows[0]) //could potentially be issue
-//   }
-// }
+const PSUs = {
+  findAll: () => {
+    const sql = 'SELECT * FROM psus'
+
+    return db 
+    .query(sql)
+    .then(dbRes => dbRes.rows)
+  }
+}
+
+const Ram = {
+  findAll: () => {
+    const sql = 'SELECT * FROM ram'
+
+    return db 
+    .query(sql)
+    .then(dbRes => dbRes.rows)
+  }
+}
+const SSDs = {
+  findAll: () => {
+    const sql = 'SELECT * FROM ssds'
+
+    return db 
+    .query(sql)
+    .then(dbRes => dbRes.rows)
+  }
+}
 
 
-
-module.exports = Spec
+module.exports = {Cases, CPUs, Graphics_cards, Motherboards, PSUs, Ram, SSDs}

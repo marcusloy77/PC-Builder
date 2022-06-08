@@ -3,15 +3,16 @@
 // Add CPUs
 
 function renderAddSpecs() {
+    
   document.querySelector('#page').innerHTML = `
   <section class="select-specs">
     <form onSubmit="createSpecs(event)">
         <h2>Select your specs</h2>
         <fieldset>
             <label for="">CPUs</label>
-            <option class="cpu_list">
-                ${renderCPUList()}
-            </option>
+            <select id="cpu_list">
+                <option> Choose a CPU </option>
+            </select>
         </fieldset>
 
         <fieldset>
@@ -46,10 +47,14 @@ function renderAddSpecs() {
     </form>
   </section>
   `
+  renderCPUList()
 }
 
 function renderCPUList() {
-  
+  let options = document.getElementById('cpu_list')
+  state.cpus.forEach(cpu => {
+    options.innerHTML = options.innerHTML + `<option> ${cpu} </option>`
+  })
 }
 
 function createSpecs(event) {
