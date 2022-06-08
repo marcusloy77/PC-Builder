@@ -17,37 +17,55 @@ function renderAddSpecs() {
 
         <fieldset>
             <label for="">Graphics Cards</label>
-            
+            <select id="graphics_card_list">
+                <option> Choose a Graphic Card </option>
+            </select>
         </fieldset>
 
         <fieldset>
-            <label for="">Ram</label>
-            
+            <label for="">Rams</label>
+            <select id="ram_list">
+                <option> Choose a Ram </option>
+            </select>
         </fieldset>
 
         <fieldset>
             <label for="">Motherboards</label>
-            
+            <select id="motherboard_list">
+                <option> Choose a Motherboard </option>
+            </select>
         </fieldset>
 
         <fieldset>
             <label for="">SSDs</label>
-            
+            <select id="ssd_list">
+                <option> Choose a SSD </option>
+            </select>
         </fieldset>
 
         <fieldset>
             <label for="">PSUs</label>
-            
+            <select id="psu_list">
+                <option> Choose a PSU </option>
+            </select>
         </fieldset>
 
         <fieldset>
             <label for="">Cases</label>
-            
+            <select id="case_list">
+                <option> Choose a Case </option>
+            </select>
         </fieldset>
     </form>
   </section>
   `
   renderCPUList()
+  renderGraphicsCardsList()
+  renderRamsList()
+  renderMotherboardsList()
+  renderSSDsList()
+  renderPSUsList()
+  renderCasesList()
 }
 
 function renderCPUList() {
@@ -56,6 +74,22 @@ function renderCPUList() {
     options.innerHTML = options.innerHTML + `<option> ${cpu} </option>`
   })
 }
+
+function renderGraphicsCardsList() {
+  let options = document.getElementById('graphics_cards_list')
+  state.gpus.forEach(gpu => {
+    options.innerHTML = options.innerHTML + `<option> ${gpu} </option>`
+  })
+}
+
+function renderRamsList() {
+  let options = document.getElementById('ram_list')
+  state.rams.forEach(ram => {
+    options.innerHTML = options.innerHTML + `<option> ${ram} </option>`
+  })
+}
+
+
 
 function createSpecs(event) {
 
