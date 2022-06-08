@@ -1,7 +1,13 @@
 const state = {
     //example pcs: [{pc1: {gpu: "graph1", cpu:"cpu1"}}, {pc2: {}}]
     pcs: [],
-    cpus: []
+    cpus: [],
+    cases: [],
+    gpus: [],
+    motherboards: [],
+    psus: [],
+    ram: [],
+    ssds: []
 }
 
 fetch('/api/pcs')
@@ -20,4 +26,4 @@ fetch('/api/specs', {
         cpus.forEach(cpu => {
             state.cpus.push(cpu.name)
         });
-})
+    })
