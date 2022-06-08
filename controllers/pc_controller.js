@@ -13,6 +13,15 @@ router.get('/', (req, res) => {
     .findByUserId(userId)
     .then(pcs => res.json(pcs))
 })
+
+router.post('/', (req, res) => {
+  const userId = req.params.id
+  const pcName = req.params.name
+
+  Pc
+    .create(userId, pcName)
+    .then(pc => res.json(pc))
+})
 // insert PUT and EDIT route once database columns confirmed
 
 router.delete('/:id', (req, res) => {

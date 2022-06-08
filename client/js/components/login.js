@@ -5,7 +5,7 @@ function renderLogin() {
             <h2>Login:</h2>
             <fieldset>
                 <label for="">Username:</label>
-                <input type="text" name="user-name">
+                <input type="text" name="userName">
             </fieldset>
             <fieldset>
                 <label for="">Password:</label>
@@ -22,6 +22,7 @@ function login(event) {
     event.preventDefault()
     const form = event.target
     const data = Object.fromEntries(new FormData(form))
+    console.log(JSON.stringify(data))
 
     fetch('/api/sessions', {
         method: 'POST',
