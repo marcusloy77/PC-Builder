@@ -84,12 +84,38 @@ function renderGraphicsCardsList() {
 
 function renderRamsList() {
   let options = document.getElementById('ram_list')
-  state.rams.forEach(ram => {
+  state.ram.forEach(ram => {
     options.innerHTML = options.innerHTML + `<option> ${ram} </option>`
   })
 }
 
+function renderMotherboardsList() {
+  let options = document.getElementById('motherboard_list')
+  state.motherboards.forEach(motherboard => {
+    options.innerHTML = options.innerHTML + `<option> ${motherboard} </option>`
+  })
+}
 
+function renderSSDsList() {
+  let options = document.getElementById('ssd_list')
+  state.ssds.forEach(ssd => {
+    options.innerHTML = options.innerHTML + `<option> ${ssd} </option>`
+  })
+}
+
+function renderPSUsList() {
+  let options = document.getElementById('psu_list')
+  state.psus.forEach(psu => {
+    options.innerHTML = options.innerHTML + `<option> ${psu} </option>`
+  })
+}
+
+function renderCasesList() {
+  let options = document.getElementById('case_list')
+  state.cases.forEach(pcCase => {
+    options.innerHTML = options.innerHTML + `<option> ${pcCase} </option>`
+  })
+}
 
 function createSpecs(event) {
 
