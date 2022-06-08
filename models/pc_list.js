@@ -1,10 +1,19 @@
-const db = require("../db/db")
-
 const Pc = {
   findByUserId: (id) => {
-    const sql = 'SELECT * FROM pc_list WHERE user_id = $1'
+    console.log(`user requesting pcs list for user: ${id}`)
+    console.log(id)
+    const sql = `
+    SELECT * FROM pc_list WHERE id = $1`
+
     return db
       .query(sql, [id])
+      .then(dbRes => dbRes.rows)
+  },
+  findAllPcs: () => {
+    const sql = `
+    SELECT * FROM pc_list`
+    return db
+      .query(sql)
       .then(dbRes => dbRes.rows)
   },
 

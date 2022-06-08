@@ -7,11 +7,19 @@ const Pc = require('../models/pc_list')
 
 // routes
 router.get('/', (req, res) => {
-  const userId = req.params.id
+  const userId = 0
+  Pc
+    .findAllPcs()
+    .then(pcs => res.json(pcs))
+})
 
+router.get('/:id', (req, res) => {
+  const userId = req.params.id
+  console.log(userId)
   Pc
     .findByUserId(userId)
     .then(pcs => res.json(pcs))
+    
 })
 
 router.post('/', (req, res) => {

@@ -30,5 +30,6 @@ function login(event) {
     })
       .then(res => res.json())
     .then(user => state.loggedInUser = user)
+    .then(() => addUserPcToState(state.loggedInUser.userName))
     .then(() => renderPcList())
 }

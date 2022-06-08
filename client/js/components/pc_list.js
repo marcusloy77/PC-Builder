@@ -18,3 +18,14 @@ function renderPcs() {
     </section>
     `).join('')
 }
+
+function addUserPcToState() {
+    const data = state.loggedInUser.userId
+    fetch(`/api/pcs/${data}`, {
+      method: "GET",
+      headers: {'Content-Type' : 'application/json'}
+    })
+    .then(res => res.json())
+    .then(res => console.log(res, "this"))
+    .then(res => console.log("helpMe"))
+}

@@ -6,19 +6,14 @@ const bcrypt = require('bcrypt')
 
 router.post('/', (req, res) => {
   const { userName, password } = req.body
-  console.log(userName, password)
-
   User
     .findByUserName(userName)
     .then (user => {
-      console.log(password)
       const isValidPassword = bcrypt.compareSync(password, user.password_digest)
-
       if (user && isValidPassword){
         //log in
-        
         req.session.userId = user.id 
-        res.json({userName: user.user_name })
+        res.json({userId: user.id, userName: user.user_name })
       }
     })
 })

@@ -12,9 +12,17 @@ CREATE TABLE users(
 
 CREATE TABLE pc_list(
   id SERIAL PRIMARY KEY,
-  user_id INTEGER,
-  name TEXT
+  user_name TEXT,
+  name TEXT,
+  cpu TEXT,
+  graphics_card TEXT,
+  ram TEXT,
+  motherboard TEXT,
+  ssd TEXT,
+  psu TEXT,
+  pc_case TEXT
 );
+INSERT INTO pc_list (user_name, name, cpu, graphics_card, ram, motherboard, ssd, psu, pc_case) VALUES ('a', 'pc1', 'intelll', 'r', 'a', 's', 'ps', 'cases');
 
 
 CREATE TABLE cpus(
@@ -51,6 +59,3 @@ CREATE TABLE cases(
   name TEXT
 );
 
-
-INSERT INTO pc_list(user_id, name) 
-VALUES (1, 'kasun');
