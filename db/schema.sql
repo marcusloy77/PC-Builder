@@ -22,7 +22,7 @@ CREATE TABLE pc_list(
   psu TEXT,
   pc_case TEXT
 );
-INSERT INTO pc_list (user_name, name, cpu, graphics_card, ram, motherboard, ssd, psu, pc_case) VALUES ('a', 'pc1', 'intelll', 'r', 'a', 's', 'ps', 'cases');
+INSERT INTO pc_list (user_name, name, cpu, graphics_card, ram, motherboard, ssd, psu, pc_case) VALUES ('a', 'pc1', 'intelll', 'g', 'r', 'a', 's', 'ps', 'cases');
 
 
 CREATE TABLE cpus(
