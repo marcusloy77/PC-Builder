@@ -7,8 +7,10 @@ const Pc = require('../models/pc_list')
 
 // routes
 router.get('/', (req, res) => {
+  const userId = req.params.id
+
   Pc
-    .findAll()
+    .findByUserId(userId)
     .then(pcs => res.json(pcs))
 })
 // insert PUT and EDIT route once database columns confirmed

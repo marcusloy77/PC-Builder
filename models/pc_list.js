@@ -2,9 +2,9 @@ const db = require("../db/db")
 
 const Pc = {
   findByUserId: (id) => {
-    const sql = 'SELECT * FROM pc_list WHERE id = $1'
+    const sql = 'SELECT * FROM pc_list WHERE user_id = $1'
     return db
-      .query(sql, [pc_id])
+      .query(sql, [id])
       .then(dbRes => dbRes.rows)
   },
 
@@ -36,6 +36,4 @@ const Pc = {
   }
 }
 
-
-
-module.exports = Spec
+module.exports = Pc

@@ -6,13 +6,12 @@ const bcrypt = require('bcrypt')
 const User = require('../models/user')
 
 router.post('/', (req, res) => {
-  const {name, email, password} = req.body
+  const {firstName, lastName, userName, email, password} = req.body
   //using bcrypt
-
-  const passswordDigest = bcrypt.hashSync(password, bcrypt.genSaltSync|(10), null)
+  const passwordDigest = bcrypt.hashSync(password, bcrypt.genSaltSync(10), null)
 
   User
-    .create(name, email, passswordDigest)
+    .create(firstName, lastName, userName, email, passwordDigest)
     .then(userName => res.json(userName))
 })
 

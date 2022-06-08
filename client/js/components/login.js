@@ -1,11 +1,11 @@
-function renderlogin() {
+function renderLogin() {
     document.querySelector('#page').innerHTML = `
     <section class="log-in">
         <form onSubmit="login(event)">
             <h2>Login:</h2>
             <fieldset>
-                <label for="">Email:</label>
-                <input type="text" name="email">
+                <label for="">Username:</label>
+                <input type="text" name="user-name">
             </fieldset>
             <fieldset>
                 <label for="">Password:</label>
