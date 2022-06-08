@@ -27,7 +27,7 @@ function renderSignUp() {
 function signUp(event) {
     event.preventDefault()
     const form = event.target
-    const data = Object.fromEntries(new FormData(data))
+    const data = Object.fromEntries(new FormData(form))
 
     fetch('/api/users', {
         method: 'POST',
