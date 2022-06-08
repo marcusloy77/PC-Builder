@@ -15,7 +15,9 @@ const User = {
     SELECT * FROM users WHERE user_name = $1`
     return db
       .query(sql, [userName])
-      .then(dbRes => dbRes.rows[0])
+      .then(dbRes => {
+        console.log(dbRes.rows[0].user_name)
+        return dbRes.rows[0]})
   }
 }
 
