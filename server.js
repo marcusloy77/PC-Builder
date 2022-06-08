@@ -6,8 +6,7 @@ const logger = require('./middlewares/logger')
 const sessions = require('./middlewares/sessions')
 
 //controllers
-// const pcController = require('./controllers/pc_controller')
-// const specsController = require('./controllers/specs_controller')
+const pcController = require('./controllers/pc_controller')
 const usersController = require('./controllers/users_controller')
 const sessionsController = require('./controllers/sessions_controller')
 
@@ -41,8 +40,7 @@ app.use(sessions)
 //    |
 //    V
 // middleware for controllers with routes
-// app.use('/api/pcs', pcController) 
-// app.use('/api/specs', specsController) 
+app.use('/api/pcs', pcController) 
 app.use('/api/users', usersController) 
 app.use('/api/sessions', sessionsController) 
 // this is saying when someone accesses the / route, run the relevant Controller

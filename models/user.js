@@ -1,20 +1,20 @@
 const db = require("../db/db")
 
 const User = {
-  create: (name, email, passswordDigest) => {
+  create: (firstName, lastName, userName, email, passwordDigest) => {
     const sql = `
-    INSERT INTO users(name, email, password_digest) VALUES($1, $2, $3)
+    INSERT INTO users(first_name, last_name, user_name, email, password_digest) VALUES($1, $2, $3, $4, $5)
     RETURNING *
     `
     return db
-      .query(sql, [name, email, passswordDigest])
-      .then(dbRes => dbRes.rows[0].name)
+      .query(sql, [firstName, lastName, userName, email, passwordDigest])
+      .then(dbRes => dbRes.rows[0].user_name)
   },
-  findByEmail: (email) => {
+  findByUserName: (userName) => {
     const sql = `
-    SELECT * FROM users WHERE email = $1`
+    SELECT * FROM users WHERE user_name = $1`
     return db
-      .query(sql, [email])
+      .query(sql, [userName])
       .then(dbRes => dbRes.rows[0])
   }
 }

@@ -14,8 +14,7 @@ if (process.env.NODE_ENV === 'production') {
   })
 } else {
   db = new pg.Pool({
-    database: 'my_local_database_name',
-    password: 'optional_password'
+    database: 'pc_db'
   })
 }
 
