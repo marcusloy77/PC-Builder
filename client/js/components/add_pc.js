@@ -17,10 +17,11 @@ function createPc(event) {
     event.preventDefault()
     const form = event.target
     const data = Object.fromEntries(new FormData(form))
+    console.log(JSON.stringify(data))
 
     fetch('/api/pcs', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/JSON'},
+        headers: { 'Content-Type': 'application/json'},
         body: JSON.stringify(data)
     })
 

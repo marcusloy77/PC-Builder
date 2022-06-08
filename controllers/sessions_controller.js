@@ -5,10 +5,10 @@ const router = express.Router()
 const bcrypt = require('bcrypt')
 
 router.post('/', (req, res) => {
-  const { email, password } = req.body
+  const { userName, password } = req.body
 
   User
-    .findByEmail(email)
+    .findByUserName(userName)
     .then (user => {
       const isValidPassword = bcrypt.compareSync(password, user.password_digest)
 
