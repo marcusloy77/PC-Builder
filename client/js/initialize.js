@@ -24,3 +24,21 @@ fetch('/api/cpus')
             state.cpus.push(cpu.name)
         })
     })
+
+fetch('/api/cases')
+    .then(res => res.json())
+    .then(cases => {
+        cases.forEach(pcCase => {
+            state.cases.push(pcCase.name)
+        })
+    })
+
+fetch('/api/gpus')
+    .then(res => res.json())
+    .then(gpus => {
+        gpus.forEach(gpu => {
+            state.gpus.push(gpu.name)
+        })
+    })
+
+

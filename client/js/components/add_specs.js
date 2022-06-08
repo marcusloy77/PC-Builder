@@ -76,7 +76,7 @@ function renderCPUList() {
 }
 
 function renderGraphicsCardsList() {
-  let options = document.getElementById('graphics_cards_list')
+  let options = document.getElementById('graphics_card_list')
   state.gpus.forEach(gpu => {
     options.innerHTML = options.innerHTML + `<option> ${gpu} </option>`
   })
