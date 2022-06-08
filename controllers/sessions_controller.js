@@ -10,6 +10,7 @@ router.post('/', (req, res) => {
   User
     .findByUserName(userName)
     .then (user => {
+      console.log(password)
       const isValidPassword = bcrypt.compareSync(password, user.password_digest)
 
       if (user && isValidPassword){
