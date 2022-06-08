@@ -15,15 +15,12 @@ fetch('/api/pcs')
     .then(pcs => {
       state.pcs = pcs
       renderPcList()
-})
+    })
 
-fetch('/api/specs', {
-    method: 'GET',
-    headers: { 'Content-Type': 'application/json' }
-  })
+fetch('/api/cpus')
     .then(res => res.json())
     .then(cpus => {
         cpus.forEach(cpu => {
             state.cpus.push(cpu.name)
-        });
+        })
     })
