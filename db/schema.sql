@@ -43,7 +43,8 @@ CREATE TABLE ssds(
 );
 CREATE TABLE psus(
   id SERIAL PRIMARY KEY,
-  name TEXT
+  name TEXT,
+  power INTEGER
 );
 CREATE TABLE cases(
   id SERIAL PRIMARY KEY,
