@@ -44,7 +44,7 @@ app.use(sessions)
 app.use('/api/pcs', pcController) 
 app.use('/api/users', usersController) 
 app.use('/api/sessions', sessionsController)
-app.use('/api/specs', specsController)
+// app.use('/api/specs', specsController)
 
 // this is saying when someone accesses the / route, run the relevant Controller
 //    |
