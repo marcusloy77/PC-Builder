@@ -15,20 +15,40 @@ CREATE TABLE pc_list(
   name TEXT
 );
 
-CREATE TABLE specs(
+
+CREATE TABLE cpus(
   id SERIAL PRIMARY KEY,
-  pc_id INTEGER,
-  part_type TEXT,
-  part_name TEXT,
-  link TEXT
+  name TEXT,
+  type TEXT
 );
+CREATE TABLE graphics_cards(
+  id SERIAL PRIMARY KEY,
+  name TEXT
+);
+CREATE TABLE ram(
+  id SERIAL PRIMARY KEY,
+  name TEXT,
+  type TEXT
+);
+CREATE TABLE motherboards(
+  id SERIAL PRIMARY KEY,
+  name TEXT,
+  ram_type TEXT,
+  cpu_type TEXT
+);
+CREATE TABLE ssds(
+  id SERIAL PRIMARY KEY,
+  name TEXT
+);
+CREATE TABLE psus(
+  id SERIAL PRIMARY KEY,
+  name TEXT
+);
+CREATE TABLE cases(
+  id SERIAL PRIMARY KEY,
+  name TEXT
+);
+
 
 INSERT INTO pc_list(user_id, name) 
 VALUES (1, 'kasun');
-
-INSERT INTO specs(pc_id, part_type, part_name, link)
-VALUES (1, 'motherboard', 'Gigabyte B450 Tomahawk MAX ATX', 'https://www.mwave.com.au/product/msi-b450-tomahawk-max-am4-atx-motherboard-ac25690'),
-(1, 'gpu', 'ASUS KO GeForce RTX 3060', 'https://www.mwave.com.au/product/gigabyte-radeon-rx-580-gaming-8gb-video-card-ac34178
-'),
-(1, 'cpu', 'Ryzen 5 3600', 'https://www.mwave.com.au/product/amd-ryzen-5-3600-6-core-socket-am4-36ghz-cpu-processor-wraith-stealth-cooler-ac24743
-');
