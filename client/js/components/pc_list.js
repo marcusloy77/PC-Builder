@@ -12,7 +12,9 @@ function renderPcs() {
         <header>
             <h2>${pc.name}</h2>
         </header>
-        <button>Select Parts</button>
+        <section class="specs">
+            <button>Select Parts</button>
+        </section>
     </section>
     `).join('')
 }
