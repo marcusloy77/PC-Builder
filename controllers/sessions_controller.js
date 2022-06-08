@@ -6,6 +6,7 @@ const bcrypt = require('bcrypt')
 
 router.post('/', (req, res) => {
   const { userName, password } = req.body
+  console.log(userName, password)
 
   User
     .findByUserName(userName)
@@ -17,7 +18,7 @@ router.post('/', (req, res) => {
         //log in
         
         req.session.userId = user.id 
-        res.json({userName: user.name })
+        res.json({userName: user.user_name })
       }
     })
 })
