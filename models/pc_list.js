@@ -37,12 +37,13 @@ const Pc = {
     return db.query(sql, [pcId])
   },
 
-  edit: (id, name) => {
+  edit: (id, name, cpu, graphics_card, ram, motherboard, ssd, psu, pc_case) => {
     const sql = `
-    UPDATE pc_list SET name = $2 WHERE id = $1
+    UPDATE pc_list SET name = $2, cpu = $3, graphics_card = $4, ram = $5, motherboard = $6, ssd = $7, psu = $8, pc_case = $9 WHERE id = $1
+    RETURNING *
     `
     return db
-      .query(sql, [id, name])
+      .query(sql, [id, name, cpu, graphics_card, ram, motherboard, ssd, psu, pc_case])
       .then(dbRes => dbRes.rows[0]) //could potentially be issue
   }
 }
