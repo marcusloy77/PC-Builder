@@ -1,6 +1,7 @@
 function renderLogin() {
     document.querySelector('#page').innerHTML = `
     <section class="log-in">
+        <div class="single-line"></div>
         <form action="" onSubmit="login(event)">
             <h2>Login:</h2>
             <fieldset>
@@ -14,8 +15,11 @@ function renderLogin() {
 
             <button>Login</button>
         </form>
+        <div class="single-line"></div>
     </section>
     `
+    hidePcList()
+    hideCarousel()
 }
 
 function renderLoginStatus() {
@@ -49,5 +53,10 @@ function login(event) {
     .then(user => state.loggedInUser = user)
     .then(() => addUserPcToState(state.loggedInUser.userName))
     .then(() => renderPcList())
+    .then(() => removeLoginForm())
     .then(() => renderLoginStatus())
+}
+
+function removeLoginForm() {
+    document.getElementById('page').innerHTML = ``
 }

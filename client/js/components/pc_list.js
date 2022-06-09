@@ -1,9 +1,11 @@
 function renderPcList() {
-    document.querySelector('#page').innerHTML = `
+    document.querySelector('#pc-container').innerHTML = `
     <section class="pc-list">
         ${renderPcs()}
     </section>
     `
+    showCarousel()
+    hideEditForm()
 }
 
 function renderPcs() {
@@ -61,4 +63,45 @@ function editPc(event) {
     })
     .then(res => res.json())
     .then(console.log())
+}
+
+function hideCarousel() {
+    document.getElementById('carouselIndicators').innerHTML = ``
+}
+
+function showCarousel() {
+    document.getElementById('carouselIndicators').innerHTML = `
+    <ol class="carousel-indicators">
+      <li data-target="#carouselIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselIndicators" data-slide-to="2"></li>
+      <li data-target="#carouselIndicators" data-slide-to="3"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100" src="./front-page-images/brian-tromp-u3lqywFcN8w-unsplash.jpg" alt="First slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="./front-page-images/jack-b-fewhfXbCUzI-unsplash.jpg" alt="Second slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="./front-page-images/tarn-nguyen-4a52btspyY8-unsplash.jpg" alt="Third slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="./front-page-images/javier-esteban-DmfYyzj8UG4-unsplash.jpg" alt="Fourth slide">
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+    `
+}
+
+function hidePcList() {
+    document.getElementById('pc-container').innerHTML = ``
 }
