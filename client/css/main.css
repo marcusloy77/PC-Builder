@@ -1,0 +1,17 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    color: #eaeaea;
+    background-color: #111111;
+    /* margin-top: 20px; */
+}
+
+body :not(div, img) {
+    margin: 0 1em;
+}
+
+#carouselIndicators {
+    margin-bottom: 20px;
+}

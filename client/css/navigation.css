@@ -1,0 +1,11 @@
+.header-nav ul {
+    display: flex;
+    position: absolute;
+    right: 0px;
+    top: 0;
+    padding: 10px 0;
+}
+
+.single-line {
+    border: 1px solid white;
+}
