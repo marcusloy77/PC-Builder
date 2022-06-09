@@ -17,42 +17,42 @@ function renderEditPc(event) {
             <input type="text" id="pc-name" value="${state.pcs[pcIndex].name}" name="name"></input>
         </fieldset>
         <fieldset>
-            <label for="">*CPUs</label>
+            <label for="">CPUs</label>
             <select id="cpu_list" name="cpu">
                 <option> ${state.pcs[pcIndex].cpu} </option>
             </select>
         </fieldset>
 
         <fieldset>
-            <label for="">*Graphics Cards</label>
+            <label for="">Graphics Cards</label>
             <select id="graphics_card_list" name="graphics_card">
                 <option> ${state.pcs[pcIndex].graphics_card} </option>
             </select>
         </fieldset>
 
         <fieldset>
-            <label for="">*Rams</label>
+            <label for="">Rams</label>
             <select id="ram_list" name="ram">
                 <option> ${state.pcs[pcIndex].ram} </option>
             </select>
         </fieldset>
 
         <fieldset>
-            <label for="">*Motherboards</label>
+            <label for="">Motherboards</label>
             <select id="motherboard_list" name="motherboard">
                 <option> ${state.pcs[pcIndex].motherboard} </option>
             </select>
         </fieldset>
 
         <fieldset>
-            <label for="">*SSDs</label>
+            <label for="">SSDs</label>
             <select id="ssd_list" name="ssd">
                 <option> ${state.pcs[pcIndex].ssd} </option>
             </select>
         </fieldset>
 
         <fieldset>
-            <label for="">*PSUs</label>
+            <label for="">PSUs</label>
             <select id="psu_list" name="psu">
                 <option>  ${state.pcs[pcIndex].psu} </option>
             </select>
@@ -76,6 +76,8 @@ function renderEditPc(event) {
   renderSSDsList()
   renderPSUsList()
   renderCasesList()
+  hideCarousel()
+  hidePcList()
 }
 
 function editSpecs(event) {
@@ -101,7 +103,8 @@ function editPc(event, pcId, pcIndex) {
   event.preventDefault()
   const form = event.target
   const data = Object.fromEntries(new FormData(form))
-  console.log(data)
+  showCarousel()
+  renderPcList()
   fetch(`/api/pcs/${pcId}`, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
@@ -112,4 +115,8 @@ function editPc(event, pcId, pcIndex) {
       state.pcs[pcIndex] = pc
       renderPcList()
     })
+}
+
+function hideEditForm() {
+  document.getElementById('page').innerHTML = ``
 }

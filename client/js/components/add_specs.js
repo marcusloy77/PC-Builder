@@ -5,53 +5,53 @@ function renderAddSpecs() {
     <form onSubmit="createSpecs(event)">
         <h2>Create Your PC!</h2>
         <fieldset>
-            <label for="">PC Name</label>
+            <label for=""><span class="red-asterisk">*</span>PC Name</label>
             <input type="text" id="pc-name" name="pc-name"></input>
         </fieldset>
         <fieldset>
-            <label for="">*CPUs</label>
+            <label for=""><span class="red-asterisk">*</span>CPUs</label>
             <select id="cpu_list">
                 <option> Choose a CPU </option>
             </select>
         </fieldset>
 
         <fieldset>
-            <label for="">*Graphics Cards</label>
+            <label for=""><span class="red-asterisk">*</span>Graphics Cards</label>
             <select id="graphics_card_list">
                 <option> Choose a Graphics Card </option>
             </select>
         </fieldset>
 
         <fieldset>
-            <label for="">*Rams</label>
+            <label for=""><span class="red-asterisk">*</span>Rams</label>
             <select id="ram_list">
                 <option> Choose a Ram </option>
             </select>
         </fieldset>
 
         <fieldset>
-            <label for="">*Motherboards</label>
+            <label for=""><span class="red-asterisk">*</span>Motherboards</label>
             <select id="motherboard_list">
                 <option> Choose a Motherboard </option>
             </select>
         </fieldset>
 
         <fieldset>
-            <label for="">*SSDs</label>
+            <label for=""><span class="red-asterisk">*</span>SSDs</label>
             <select id="ssd_list">
                 <option> Choose a SSD </option>
             </select>
         </fieldset>
 
         <fieldset>
-            <label for="">*PSUs</label>
+            <label for=""><span class="red-asterisk">*</span>PSUs</label>
             <select id="psu_list">
                 <option> Choose a PSU </option>
             </select>
         </fieldset>
 
         <fieldset>
-            <label for="">Cases</label>
+            <label for=""><span class="red-asterisk">*</span>Cases</label>
             <select id="case_list">
                 <option> Choose a Case </option>
             </select>
@@ -68,6 +68,8 @@ function renderAddSpecs() {
   renderSSDsList()
   renderPSUsList()
   renderCasesList()
+  hideCarousel()
+  hidePcList()
 }
 
 
