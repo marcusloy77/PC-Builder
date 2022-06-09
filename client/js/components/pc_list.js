@@ -10,7 +10,8 @@ function renderPcs() {
     return state.pcs.map(pc => `
     <section class="pc" data-id="${pc.id}">
         <header>
-            <h2>${pc.name}</h2>
+            <h2 class="pc-name">${pc.name}</h2>
+            <span class="delete" onClick="deletePc(event)">Delete</span>
         </header>
         <section class="specs">
             <button>Select Parts</button>
@@ -28,4 +29,15 @@ function addUserPcToState() {
     .then(res => res.json())
     .then(res => console.log(res, "this"))
     .then(res => console.log("helpMe"))
+}
+
+function deletePc(event) {
+    const deleteBtn = event.target
+    const pcDOM = deleteBtn.closest('.pc')
+    const pcId = parseInt(pcDOM.dataset.id)
+    fetch(`/api/pcs/${pcId}`, {
+        method: 'DELETE'
+    })
+        .then(() => {state.pcs = state.pcs.filter(pc => pc.id != pcId)})
+        .then(() => renderPcList())
 }
