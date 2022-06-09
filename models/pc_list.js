@@ -3,9 +3,8 @@ const db = require('../db/db')
 const Pc = {
   findByUserId: (id) => {
     console.log(`user requesting pcs list for user: ${id}`)
-    console.log(id)
     const sql = `
-    SELECT * FROM pc_list WHERE user_id = $1`
+    SELECT * FROM pc_list WHERE user_id = $1 ORDER BY id DESC`
 
     return db
       .query(sql, [id])
@@ -13,7 +12,7 @@ const Pc = {
   },
   findAllPcs: () => {
     const sql = `
-    SELECT * FROM pc_list`
+    SELECT * FROM pc_list ORDER BY id DESC`
     return db
       .query(sql)
       .then(dbRes => dbRes.rows)
