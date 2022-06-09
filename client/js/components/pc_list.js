@@ -34,10 +34,10 @@ function addUserPcToState() {
 function deletePc(event) {
     const deleteBtn = event.target
     const pcDOM = deleteBtn.closest('.pc')
-    const pcId = pcDOM.dataset.id
+    const pcId = parseInt(pcDOM.dataset.id)
     fetch(`/api/pcs/${pcId}`, {
         method: 'DELETE'
     })
         .then(() => {state.pcs = state.pcs.filter(pc => pc.id != pcId)})
-        renderPcList()
+        .then(() => renderPcList())
 }
