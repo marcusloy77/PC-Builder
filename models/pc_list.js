@@ -30,11 +30,11 @@ const Pc = {
       .then(dbRes => dbRes.rows[0])
   },
 
-  delete: (id) => {
+  delete: (pcId) => {
     const sql = `
     DELETE FROM pc_list WHERE id = $1
     `
-    return db.query(sql, [id])
+    return db.query(sql, [pcId])
   },
 
   edit: (id, name) => {

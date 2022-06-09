@@ -10,7 +10,7 @@ function renderPcs() {
     return state.pcs.map(pc => `
     <section class="pc" data-id="${pc.id}">
         <header>
-            <h2>${pc.name}</h2>
+            <h2 class="pc-name">${pc.name}</h2>
             <span class="delete" onClick="deletePc(event)">Delete</span>
         </header>
         <section class="specs">
@@ -35,7 +35,6 @@ function deletePc(event) {
     const deleteBtn = event.target
     const pcDOM = deleteBtn.closest('.pc')
     const pcId = pcDOM.dataset.id
-    console.log(pcId)
     fetch(`/api/pcs/${pcId}`, {
         method: 'DELETE'
     })

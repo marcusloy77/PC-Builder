@@ -36,7 +36,7 @@ router.delete('/:id', (req, res) => {
   const pcId = req.params.id
 
   Pc
-    .delete([pcId])
+    .delete(pcId)
     .then(() => res.json({ message: 'deleted successfully' }))
 })
 
