@@ -23,11 +23,11 @@ router.get('/:id', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-  const userId = req.session.userId
-  const pcName = req.body.name
+  const {cpu, gpu, ram, motherboard, ssd, psu, pcCase, name,id} = req.body
+  
 
   Pc
-    .create(userId, pcName)
+    .create(id, name, cpu, gpu, ram, motherboard, ssd, psu, pcCase )
     .then(pc => res.json(pc))
 })
 // insert PUT and EDIT route once database columns confirmed
