@@ -3,9 +3,52 @@
     position: absolute;
     right: 0px;
     top: 0;
-    padding: 10px 0;
+    padding: 30px 0;
 }
 
 .single-line {
     border: 1px solid white;
+}
+
+.main-page-header {
+    padding: 20px 0;
+}
+
+.header-container {
+    position: fixed;
+    z-index: 99999;
+    background: #111111;
+    width: 100%;
+}
+
+form {
+    padding: 120px 0;
+}
+
+.log-in input {
+    color: #eaeaea;
+    width: 500px;
+    right: 740px;
+    position: absolute;
+    padding: 5px;
+    border: none;
+    background: #57566530;
+}
+
+#homePageButtons li {
+    border: 1px solid #eaeaea;
+    background: #111111;
+    color: #eaeaea;
+    padding: 2px 19px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#homePageButtons li:hover {
+    background-color: rgba(255, 255, 255, 0.534);
+}
+
+.select-specs button {
+    position: absolute;
+    top: 560px;
 }

@@ -5,8 +5,7 @@ function renderPcList() {
     </section>
     `
     if (!isLoggedIn()){
-      document.querySelectorAll('.delete').forEach(doc => doc.innerHTML = ``)
-      document.querySelectorAll('.edit').forEach(doc => doc.innerHTML = ``)
+      document.querySelectorAll('.edit-delete').forEach(doc => doc.innerHTML = ``)
     }
     showCarousel()
     hideEditForm()
@@ -17,16 +16,18 @@ function renderPcs() {
     <section class="pc" data-id="${pc.id}">
         <header>
             <h2 class="pc-name">${pc.name}</h2>
-            <span class="delete" onClick="deletePc(event)">Delete</span>
-            <span class="edit" onClick="renderEditPc(event)">Edit</span>
-            <ul> Current Components
-                <li class="displayedCpu"> CPU: ${pc.cpu} </li>
-                <li class="displayedGpu"> GPU: ${pc.graphics_card} </li> 
-                <li class="displayedRam"> RAM: ${pc.ram} </li> 
-                <li class="displayedMotherboard"> Motherboard: ${pc.motherboard} </li> 
-                <li class="displayedSsd"> SSD: ${pc.ssd} </li> 
-                <li class="displayedPsu"> Power Supply Unit: ${pc.psu} </li> 
-                <li class="displayedCase"> Case: ${pc.pc_case} </li> 
+            <section class="edit-delete">
+              <span class="edit" onClick="renderEditPc(event)">Edit</span>
+              <span class="delete" onClick="deletePc(event)">Delete</span>
+            </section>
+            <ul class="display-list">
+                <li id="displayedCpu"> CPU: ${pc.cpu} </li>
+                <li id="displayedGpu"> GPU: ${pc.graphics_card} </li> 
+                <li id="displayedRam"> RAM: ${pc.ram} </li> 
+                <li id="displayedMotherboard"> Motherboard: ${pc.motherboard} </li> 
+                <li id="displayedSsd"> SSD: ${pc.ssd} </li> 
+                <li id="displayedPsu"> Power Supply Unit: ${pc.psu} </li> 
+                <li id="displayedCase"> Case: ${pc.pc_case} </li> 
             </ul>
         </header>
     </section>

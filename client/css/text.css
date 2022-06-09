@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Subrayada&family=Montserrat:wght@700&family=Poppins:wght@300;700&display=swap');
 
 body {
     font-family: 'Poppins', sans-serif;
 }
 
 h1 {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat Subrayada', sans-serif;
     text-transform: uppercase;
     font-weight: bolder;
 }
@@ -19,4 +20,51 @@ h2 {
 
 .red-asterisk {
     color: red;
+}
+
+li {
+    list-style: none;
+}
+
+select {
+    width: 500px;
+    position: absolute;
+    border: none;
+    right: 600px;
+    padding: 5px 0;
+    color: #eaeaea;
+    background: #57566530;
+}
+
+fieldset {
+    padding: 10px 0;
+}
+
+#pc-name {
+    position: absolute;
+    right: 600px;
+    color: #eaeaea;
+    width: 500px;
+    padding: 5px;
+    border: none;
+    background: #57566530;
+}
+
+button {
+    position: absolute;
+    left: 65px;
+    border: 1px solid #eaeaea;
+    background: #111111;
+    color: #eaeaea;
+    padding: 2px 19px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.log-in button {
+    top: 289px;
+}
+
+button:hover {
+    background-color: rgba(255, 255, 255, 0.534);
 }

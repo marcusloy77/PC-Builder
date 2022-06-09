@@ -5,7 +5,6 @@
 body {
     color: #eaeaea;
     background-color: #111111;
-    /* margin-top: 20px; */
 }
 
 body :not(div, img) {
@@ -14,4 +13,9 @@ body :not(div, img) {
 
 #carouselIndicators {
     margin-bottom: 20px;
+}
+
+.separator {
+    position: absolute;
+    top: 90px;
 }
