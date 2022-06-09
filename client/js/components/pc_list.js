@@ -12,7 +12,7 @@ function renderPcs() {
         <header>
             <h2 class="pc-name">${pc.name}</h2>
             <span class="delete" onClick="deletePc(event)">Delete</span>
-            <span class="edit" onClick="editPc(event)">Edit</span>
+            <span class="edit" onClick="renderEditPc(event)">Edit</span>
             <ul> Current Components
                 <li class="displayedCpu"> CPU: ${pc.cpu} </li>
                 <li class="displayedGpu"> GPU: ${pc.graphics_card} </li> 
@@ -47,4 +47,18 @@ function deletePc(event) {
     })
         .then(() => {state.pcs = state.pcs.filter(pc => pc.id != pcId)})
         .then(() => renderPcList())
+}
+
+function editPc(event) {
+    const editBtn = event.target
+    const pcDOM = editBtn.closest('.pc')
+    const pcId = parseInt(pcDOM.dataset.id)
+    const data = Object.fromEntries(new FormData(form))
+    fetch(`/api/pcs/${pcId}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json'},
+        body: JSON.stringify(data)
+    })
+    .then(res => res.json())
+    .then(console.log())
 }
