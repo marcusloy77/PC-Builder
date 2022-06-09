@@ -19,14 +19,14 @@ const Pc = {
       .then(dbRes => dbRes.rows)
   },
 
-  create: (user_id, name) => {
+  create: (id, name, cpu, gpu, ram, motherboard, ssd, psu, pcCase ) => {
     const sql = `
-    INSERT INTO pc_list(user_id, name)
-    VALUES($1, $2)
+    INSERT INTO pc_list(user_id, name, cpu, graphics_card, ram, motherboard, ssd, psu, pc_case)
+    VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9)
     RETURNING *
     `
     return db
-      .query(sql, [user_id, name])
+      .query(sql, [id, name, cpu, gpu, ram, motherboard, ssd, psu, pcCase])
       .then(dbRes => dbRes.rows[0])
   },
 

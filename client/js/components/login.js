@@ -22,17 +22,15 @@ function renderLoginStatus() {
     try  {
         if (state.loggedInUser.userName) {
         document.getElementById('homePageButtons').innerHTML = `
-        <li class="add-pc" onClick="renderAddPc()">Add PC</li>
         <li class="logout" onClick="renderLogout()">Logout</li>
-        <li onClick="renderAddSpecs()">test</li>
+        <li onClick="renderAddSpecs()">Add PC</li>
     `}}
     catch {
     
         document.getElementById('homePageButtons').innerHTML = `
         <li class="sign-up" onClick="renderSignUp()">Sign Up</li>
         <li class="login" onClick="renderLogin()">Login</li>
-        <li onClick="renderAddSpecs()">test</li>
-    
+        
     `}
     
 }
