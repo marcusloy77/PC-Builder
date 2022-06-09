@@ -4,6 +4,10 @@ function renderPcList() {
         ${renderPcs()}
     </section>
     `
+    if (!isLoggedIn()){
+      document.querySelectorAll('.delete').forEach(doc => doc.innerHTML = ``)
+      document.querySelectorAll('.edit').forEach(doc => doc.innerHTML = ``)
+    }
     showCarousel()
     hideEditForm()
 }
@@ -36,8 +40,9 @@ function addUserPcToState() {
       headers: {'Content-Type' : 'application/json'}
     })
     .then(res => res.json())
-    .then(res => console.log(res, "this"))
-    .then(res => console.log("helpMe"))
+    .then(pcs => state.pcs = pcs)
+    .then(() => renderPcList())
+    //.then(res => console.log(res, "this"))
 }
 
 function deletePc(event) {

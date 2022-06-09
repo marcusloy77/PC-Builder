@@ -26,6 +26,9 @@ function renderSignUp() {
         </form>
     </section>
     `
+    hidePcList()
+    hideCarousel()
+    
 }
 
 function signUp(event) {
@@ -51,4 +54,5 @@ function signUp(event) {
             renderPcList()
         }
     })
+    .then(() => removeLoginForm())
 }

@@ -38,6 +38,17 @@ function renderLoginStatus() {
     `}
     
 }
+function isLoggedIn() {
+    try  {
+        if (state.loggedInUser.userName) {
+        return true
+        }
+    }
+
+    catch {
+    return false
+    }
+}
 
 function login(event) {
     event.preventDefault()
@@ -49,7 +60,7 @@ function login(event) {
       headers: {'Content-Type' : 'application/json'},
       body: JSON.stringify(data)
     })
-      .then(res => res.json())
+    .then(res => res.json())
     .then(user => state.loggedInUser = user)
     .then(() => addUserPcToState(state.loggedInUser.userName))
     .then(() => renderPcList())
