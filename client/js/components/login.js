@@ -18,6 +18,25 @@ function renderLogin() {
     `
 }
 
+function renderLoginStatus() {
+    try  {
+        if (state.loggedInUser.userName) {
+        document.getElementById('homePageButtons').innerHTML = `
+        <li class="add-pc" onClick="renderAddPc()">Add PC</li>
+        <li class="logout" onClick="renderLogout()">Logout</li>
+        <li onClick="renderAddSpecs()">test</li>
+    `}}
+    catch {
+    
+        document.getElementById('homePageButtons').innerHTML = `
+        <li class="sign-up" onClick="renderSignUp()">Sign Up</li>
+        <li class="login" onClick="renderLogin()">Login</li>
+        <li onClick="renderAddSpecs()">test</li>
+    
+    `}
+    
+}
+
 function login(event) {
     event.preventDefault()
     const form = event.target
@@ -32,4 +51,5 @@ function login(event) {
     .then(user => state.loggedInUser = user)
     .then(() => addUserPcToState(state.loggedInUser.userName))
     .then(() => renderPcList())
+    .then(() => renderLoginStatus())
 }

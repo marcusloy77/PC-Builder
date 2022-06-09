@@ -10,6 +10,8 @@ const state = {
     ssds: []
 }
 
+
+
 fetch('/api/pcs')
     .then(res => res.json())
     .then(pcs => {
@@ -71,4 +73,7 @@ fetch('/api/psus')
         psus.forEach(psu => {
             state.psus.push(psu.name)
         })
-    }) 
+    })
+
+renderLoginStatus()
+
