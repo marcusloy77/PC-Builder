@@ -40,4 +40,13 @@ router.delete('/:id', (req, res) => {
     .then(() => res.json({ message: 'deleted successfully' }))
 })
 
+router.put('/:id', (req, res) => {
+  const {name, cpu, graphics_card, ram, motherboard, ssd, psu, pc_case} = req.body
+  const pcId = req.params.id
+
+  Pc
+    .edit(pcId, name, cpu, graphics_card, ram, motherboard, ssd, psu, pc_case)
+    .then(pc => res.json(pc))
+})
+
 module.exports = router

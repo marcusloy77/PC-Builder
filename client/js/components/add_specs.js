@@ -1,7 +1,3 @@
-// Include if statement - if the user selects a PC then they will be able to add specs:
-
-// Add CPUs
-
 function renderAddSpecs() {
     
   document.querySelector('#page').innerHTML = `
@@ -152,24 +148,9 @@ function createSpecs(event) {
   const psu = document.getElementById('psu_list').value
   const pcCase = document.getElementById('case_list').value
 
-
-
-
-
-
   if (cpu != 'Choose a CPU' && gpu != 'Choose a Graphic Card' && ram != 'Choose a Ram' && motherboard != 'Choose a Motherboard' && ssd != 'Choose a SSD' && psu != 'Choose a PSU' && pcCase != 'Choose a Case' && name.length > 0) {
     createPc(cpu, gpu, ram, motherboard, ssd, psu, pcCase, name)
 
-    // state.pcs.push({})
-    // let i = state.pcs.length-1
-    // state.pcs[i]['name'] = name
-    // state.pcs[i]['cpu'] = cpu
-    // state.pcs[i]['gpu'] = gpu
-    // state.pcs[i]['ram'] = ram
-    // state.pcs[i]['motherboard'] = motherboard
-    // state.pcs[i]['ssd'] = ssd
-    // state.pcs[i]['psu'] = psu
-    // state.pcs[i]['case'] = pcCase
   } else {
     console.log('Please finish adding your specs')
   }
