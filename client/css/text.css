@@ -16,3 +16,7 @@ h2 {
     font-weight: 300;
     text-transform: uppercase;
 }
+
+.red-asterisk {
+    color: red;
+}
