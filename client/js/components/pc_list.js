@@ -18,7 +18,7 @@ function renderPcs() {
                 <li class="displayedGpu"> GPU: ${pc.graphics_card} </li> 
                 <li class="displayedRam"> RAM: ${pc.ram} </li> 
                 <li class="displayedMotherboard"> Motherboard: ${pc.motherboard} </li> 
-                <li class="displayedSsd"> Solid State Drive: ${pc.ssd} </li> 
+                <li class="displayedSsd"> SSD: ${pc.ssd} </li> 
                 <li class="displayedPsu"> Power Supply Unit: ${pc.psu} </li> 
                 <li class="displayedCase"> Case: ${pc.pc_case} </li> 
             </ul>
