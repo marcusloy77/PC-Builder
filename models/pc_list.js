@@ -5,7 +5,7 @@ const Pc = {
     console.log(`user requesting pcs list for user: ${id}`)
     console.log(id)
     const sql = `
-    SELECT * FROM pc_list WHERE id = $1`
+    SELECT * FROM pc_list WHERE user_id = $1`
 
     return db
       .query(sql, [id])
