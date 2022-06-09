@@ -16,7 +16,7 @@ const User = {
     return db
       .query(sql, [userName])
       .then(dbRes => {
-        console.log(dbRes.rows[0].user_name)
+        // console.log(dbRes.rows[0].user_name)
         return dbRes.rows[0]})
   }
 }

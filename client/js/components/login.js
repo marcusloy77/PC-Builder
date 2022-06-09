@@ -1,7 +1,6 @@
 function renderLogin() {
     document.querySelector('#page').innerHTML = `
     <section class="log-in">
-        <div class="single-line"></div>
         <form action="" onSubmit="login(event)">
             <h2>Login:</h2>
             <fieldset>
@@ -15,7 +14,6 @@ function renderLogin() {
 
             <button>Login</button>
         </form>
-        <div class="single-line"></div>
     </section>
     `
     hidePcList()
@@ -54,7 +52,6 @@ function login(event) {
     event.preventDefault()
     const form = event.target
     const data = Object.fromEntries(new FormData(form))
-    console.log(data)
     fetch('/api/sessions', {
       method: "POST",
       headers: {'Content-Type' : 'application/json'},
@@ -67,6 +64,29 @@ function login(event) {
     .then(() => removeLoginForm())
     .then(() => renderLoginStatus())
 }
+
+// function login(event) {
+//     event.preventDefault()
+//     const form = event.target
+//     const data = Object.fromEntries(new FormData(form))
+//     fetch('/api/sessions', {
+//       method: "POST",
+//       headers: {'Content-Type' : 'application/json'},
+//       body: JSON.stringify(data)
+//     })
+//     .then(res => res.json())
+//     .then(res => {
+//         if (res.error) {
+//             console.log(res.error)
+//         } else {
+//             user => state.loggedInUser = user
+//             .then(() => addUserPcToState(state.loggedInUser.userName))
+//             .then(() => renderPcList())
+//             .then(() => removeLoginForm())
+//             .then(() => renderLoginStatus())
+//         }
+//     })
+// }
 
 function removeLoginForm() {
     document.getElementById('page').innerHTML = ``

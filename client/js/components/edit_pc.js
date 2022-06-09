@@ -65,7 +65,7 @@ function renderEditPc(event) {
             </select>
         </fieldset>
 
-        <button>Edit Specs</button>
+        <button>Save updates!</button>
     </form>
   </section>
   `
@@ -80,24 +80,24 @@ function renderEditPc(event) {
   hidePcList()
 }
 
-function editSpecs(event) {
-  event.preventDefault()
-  const form = event.target
-  const name = document.getElementById('pc-name').value
-  const cpu = document.getElementById('cpu_list').value
-  const gpu = document.getElementById('graphics_card_list').value
-  const ram = document.getElementById('ram_list').value
-  const motherboard = document.getElementById('motherboard_list').value
-  const ssd = document.getElementById('ssd_list').value
-  const psu = document.getElementById('psu_list').value
-  const pcCase = document.getElementById('case_list').value
+// function editSpecs(event) {
+//   event.preventDefault()
+//   const form = event.target
+//   const name = document.getElementById('pc-name').value
+//   const cpu = document.getElementById('cpu_list').value
+//   const gpu = document.getElementById('graphics_card_list').value
+//   const ram = document.getElementById('ram_list').value
+//   const motherboard = document.getElementById('motherboard_list').value
+//   const ssd = document.getElementById('ssd_list').value
+//   const psu = document.getElementById('psu_list').value
+//   const pcCase = document.getElementById('case_list').value
 
-  if (name.length > 0) {
-    createPc(cpu, gpu, ram, motherboard, ssd, psu, pcCase, name)
-  } else {
-    console.log('Please finish adding your specs')
-  }
-}
+//   if (name.length > 0) {
+//     createPc(cpu, gpu, ram, motherboard, ssd, psu, pcCase, name)
+//   } else {
+//     console.log('Please finish adding your specs')
+//   }
+// }
 
 function editPc(event, pcId, pcIndex) {
   event.preventDefault()
