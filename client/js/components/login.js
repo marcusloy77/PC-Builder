@@ -38,6 +38,17 @@ function renderLoginStatus() {
     `}
     
 }
+function isLoggedIn() {
+    try  {
+        if (state.loggedInUser.userName) {
+        return true
+        }
+    }
+
+    catch {
+    return false
+    }
+}
 
 function login(event) {
     event.preventDefault()

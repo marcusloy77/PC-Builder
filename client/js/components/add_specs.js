@@ -154,7 +154,7 @@ function createSpecs(event) {
     createPc(cpu, gpu, ram, motherboard, ssd, psu, pcCase, name)
 
   } else {
-    console.log('Please finish adding your specs')
+    alert('Please fill out all PC components')
   }
 }
 

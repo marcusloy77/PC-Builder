@@ -65,7 +65,7 @@ function renderEditPc(event) {
             </select>
         </fieldset>
 
-        <button>Add Specs</button>
+        <button>Edit Specs</button>
     </form>
   </section>
   `
